@@ -1,0 +1,66 @@
+/* Color:   #607ff2   */
+
+* {
+    color: white;
+}
+
+body {
+    background-color: #222;
+}
+
+.col-sm-4 ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 35px;
+    padding: 0 5px;
+    line-height: 45px;
+    transition: 0.2s ease-in-out;
+}
+
+button i {
+    color: black;
+}
+
+#nav-title {
+    color: white;
+}
+
+#nav-title:hover {
+    color: #607ff2;
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+    color: #607ff2;
+}
+
+nav ul li .social i:hover {
+    color: #607ff2;
+}
+
+.navbar-brand {
+    font-size: 45px;
+}
+
+@media screen and (max-width:1030px) {
+    ul li a {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .navbar-brand {
+        font-size: 25px;
+    }
+}
