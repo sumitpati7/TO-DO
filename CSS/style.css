@@ -1,11 +1,7 @@
 /* Color:   #607ff2   */
 
 * {
-    color: white;
-}
-
-body {
-    background-color: #222;
+    color: black;
 }
 
 .col-sm-4 ul {
@@ -26,8 +22,16 @@ ul li a {
     transition: 0.2s ease-in-out;
 }
 
+nav ul li .social i {
+    color: white;
+}
+
+.social {
+    text-align: right;
+}
+
 button i {
-    color: black;
+    color: white;
 }
 
 #nav-title {
@@ -36,7 +40,6 @@ button i {
 
 #nav-title:hover {
     color: #607ff2;
-    transform: scale(1.05);
     transition: 0.3s ease-in-out;
 }
 
@@ -53,9 +56,89 @@ nav ul li .social i:hover {
     font-size: 45px;
 }
 
+div.stars {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=radio] {
+    appearance: none;
+    margin: 0;
+    box-shadow: none;
+    /* remove shadow on invalid submit */
+}
+
+
+/* generated content is supported on input. */
+
+input[type=radio]::after {
+    content: '\2605';
+    font-size: 32px;
+}
+
+
+/* by default, if no value is selected, all stars are grey */
+
+input[type=radio]:invalid::after {
+    color: #ddd;
+}
+
+
+/* if the .stars has focus or is hovered, make all stars darker */
+
+.stars:hover input[type=radio]:invalid::after,
+.stars:focus-within input[type=radio]:invalid::after {
+    color: #888;
+}
+
+
+/* make all the stars after the focused one light grey, until a value is selected */
+
+.stars:hover input[type=radio]:hover~input[type=radio]:invalid::after,
+.stars input[type=radio]:focus~input[type=radio]:invalid::after {
+    color: #ddd;
+}
+
+
+/* if a value is selected, make them all selected */
+
+.stars input[type=radio]:valid {
+    color: orange;
+}
+
+
+/* then make the ones coming after the selected value look inactive */
+
+.stars input[type=radio]:checked~input[type=radio]:not(:checked)::after {
+    color: #ccc;
+    content: '\2606';
+    /* optional. hollow star */
+}
+
 @media screen and (max-width:1030px) {
     ul li a {
-        font-size: 32px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:677px) {
+    ul li a {
+        font-size: 22.5px;
+        text-align: right;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    ul li a {
+        font-size: 45px;
+    }
+    .social {
+        text-align: center;
+        margin-top: 10px;
     }
 }
 
