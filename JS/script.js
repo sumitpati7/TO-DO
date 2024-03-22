@@ -34,16 +34,27 @@ for (x of todo) {
     print(x);
 }
 
+function display_stars(x) {
+    let str = '';
+    for (let j = 0; j < x; j++) {
+        str = str + `<i class="fa-solid fa-star" style="color:orange;"></i>`;
+    }
+    return str;
+}
+
 function add() {
-    console.log("Hello");
+
     let title = document.getElementById("title");
     let details = document.getElementById("details");
     let priority = document.querySelector('input[name="rating"]:checked');
     let deadline = document.getElementById("deadline");
     let category = document.getElementById("category");
-    todo[i] = new TODO(title.value, details.value, priority.value, deadline.value, category.value);
+    deadline = new Date(deadline.value)
+    deadline = deadline.toLocaleString();
+    todo[i] = new TODO(title.value, details.value, priority.value, deadline, category.value);
     console.log(todo[i]);
     print(todo[i++]);
+    document.getElementById("modal_form").reset();
     return false;
 }
 
@@ -55,7 +66,7 @@ function print(item) {
         <div class="priority col-sm-5 col-md-5 col-lg-5 col-xxl-5 d-flex justify-content-center align-items-center"> ${item.deadline}</div>
     </div>
     <div class="row px-3">
-        <div class="col-12">${item.priority}</div>
+        <div class="col-12">${display_stars(item.priority)}</div>
     </div>
     <div class="row px-3">
         <div class="col-12 ">${item.category}</div>
