@@ -42,10 +42,10 @@
             </div>
         </nav>
         <div class="body">
-            <div class="container px-0 list_container d-flex justify-content-center align-items-center" style="height: 80vh; margin-top: 10px; border-radius: 25px;" id="content">
+            <div class="container px-0 list_container d-flex justify-content-center align-items-center" style=" margin-top: 10px; border-radius: 25px;" id="content">
                 <div class="left">
-                    <div class="container d-flex justify-content-start" id="modal-prompt">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 50%; height: 45px; width:45px; font-size: 20px; color: black;"><i class="fa-solid fa-plus"></i></button>
+                    <div class="container d-flex" id="modal_prompt">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 50%;"><i class="fa-solid fa-plus"></i></button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered ">
                                 <div class="modal-content">
@@ -84,8 +84,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary" id="my_button" data-bs-dismiss="modal">Add</button>
+                                            <button type="button" class="btn btn-secondary" id="modal_close" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary" id="modal_submit" data-bs-dismiss="modal">Add</button>
                                         </div>
                                     </form>
                                 </div>

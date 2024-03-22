@@ -61,18 +61,18 @@ function add() {
 function print(item) {
     console.log(item);
     document.getElementById("print-area").innerHTML += `<div class="items container">
-    <div class="row px-3" style="height: 45px; margin-bottom:15px">
-        <div class="col-sm-7 col-md-7 col-lg-7 col-xxl-7 item-title" style="border-bottom: 1px solid rgb(196, 193, 193);">${item.title}</div>
-        <div class="priority col-sm-5 col-md-5 col-lg-5 col-xxl-5 d-flex justify-content-center align-items-center"> ${item.deadline}</div>
+    <div class="row" style="margin-bottom:15px">
+        <div class="col-sm-12 col-md-9 col-lg-8 col-xxl-7 item-title" style="border-bottom: 1px solid rgb(196, 193, 193);">${item.title}</div>
+        <div class="priority col-sm-12 col-md-3 col-lg-4 col-xxl-5"> ${item.deadline}</div>
     </div>
     <div class="row px-3">
-        <div class="col-12">${display_stars(item.priority)}</div>
+        <div class="col-sm-12 padding_remove">${display_stars(item.priority)}</div>
     </div>
     <div class="row px-3">
-        <div class="col-12 ">${item.category}</div>
+        <div class="col-sm-12 padding_remove">${item.category}</div>
     </div>
     <div class="row px-3">
-        <div class="col-12">${item.details}</div>
+        <div class="col-sm-12 padding_remove">${item.details}</div>
     </div>
 </div>`
 }
