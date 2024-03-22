@@ -167,21 +167,41 @@ button i {
     width: 100%;
     overflow-y: auto;
     display: inline-grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 2000fr);
 }
 
 .items {
     border: #607ff2 solid 1px;
     border-radius: 20px;
-    height: 300px;
+    height: 250px;
     width: 95%;
-    margin: 15px 0;
+    margin-top: 25px;
     padding: 10px;
+    box-shadow: 5px 5px 5px 3px grey;
+}
+
+.items:first-child,
+.items:nth-child(2) {
+    margin-top: 0px;
 }
 
 .items .row .item-title {
     font-size: 40px;
     margin-bottom: 10px;
+}
+
+.row .col-12 i {
+    font-size: 35px;
+    padding: 3px;
+}
+
+.row .col-12 i:first-child {
+    margin-left: 0px;
+}
+
+.row .col-12 {
+    padding-left: 0px;
 }
 
 @media screen and (max-width:1030px) {
