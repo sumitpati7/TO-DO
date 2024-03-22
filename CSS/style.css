@@ -9,9 +9,17 @@
     padding: 0;
 }
 
+body {
+    background-color: #DEE2ED;
+}
+
 ul li {
     list-style: none;
     display: inline-block;
+}
+
+#content {
+    background-color: #F5F5F5;
 }
 
 ul li a {
@@ -30,7 +38,15 @@ nav ul li .social i {
     text-align: right;
 }
 
-button i {
+.body {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.input-group button i {
     color: white;
 }
 
@@ -115,6 +131,52 @@ input[type=radio]:invalid::after {
     color: #ccc;
     content: '\2606';
     /* optional. hollow star */
+}
+
+.list_container {
+    box-shadow: 10px 10px 10px 5px grey;
+    margin-top: 25px;
+}
+
+button i {
+    color: rgb(39, 36, 36);
+}
+
+.left {
+    border-right: 1px solid rgb(196, 193, 193);
+    width: 5%;
+    height: 90%;
+    padding-top: 10px;
+}
+
+.right {
+    width: 95%;
+    height: 90%;
+    padding: 0 25px;
+}
+
+.right .right-top {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.right .right-bottom {
+    height: 95%;
+    width: 100%;
+    overflow-y: auto;
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.items {
+    border: #607ff2 solid 1px;
+    border-radius: 20px;
+    height: 300px;
+    width: 350px;
+    margin: 15px 0;
+    flex-grow: 0 1;
 }
 
 @media screen and (max-width:1030px) {
