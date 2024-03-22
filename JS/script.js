@@ -22,12 +22,19 @@ class TODO {
         return (this.category);
     }
 }
-
+let a = new Date(2024, 2, 23);
+a = a.toLocaleString();
 let todo = [];
 let i = 0;
+todo[i++] = new TODO('Medicine', 'Dont forget to take medicine', 4, a, 'personal')
+todo[i++] = new TODO('Pick up Kids', 'Dont forget to take medicine', 4, a, 'kids')
+console.log(todo[0]);
+console.log(todo[1]);
+for (x of todo) {
+    print(x);
+}
 
 function add() {
-    let count = 0;
     console.log("Hello");
     let title = document.getElementById("title");
     let details = document.getElementById("details");
@@ -35,6 +42,26 @@ function add() {
     let deadline = document.getElementById("deadline");
     let category = document.getElementById("category");
     todo[i] = new TODO(title.value, details.value, priority.value, deadline.value, category.value);
-    console.log(todo[i++]);
+    console.log(todo[i]);
+    print(todo[i++]);
     return false;
+}
+
+function print(item) {
+    console.log(item);
+    document.getElementById("print-area").innerHTML += `<div class="items container">
+    <div class="row px-3" style="height: 45px; margin-bottom:15px">
+        <div class="col-sm-7 col-md-7 col-lg-7 col-xxl-7 item-title" style="border-bottom: 1px solid rgb(196, 193, 193);">${item.title}</div>
+        <div class="priority col-sm-5 col-md-5 col-lg-5 col-xxl-5 d-flex justify-content-center align-items-center"> ${item.deadline}</div>
+    </div>
+    <div class="row px-3">
+        <div class="col-12">${item.priority}</div>
+    </div>
+    <div class="row px-3">
+        <div class="col-12 ">${item.category}</div>
+    </div>
+    <div class="row px-3">
+        <div class="col-12">${item.details}</div>
+    </div>
+</div>`
 }
