@@ -1,10 +1,11 @@
 class TODO {
-    constructor(title, details, priority, deadline, category) {
+    constructor(title, details, priority, deadline, category, number) {
         this.title = title;
         this.details = details;
         this.priority = priority;
         this.deadline = deadline;
         this.category = category;
+        this.number = number;
     }
     get_title() {
         return (this.title);
@@ -26,8 +27,8 @@ let a = new Date(2024, 2, 23);
 a = a.toLocaleString();
 let todo = [];
 let i = 0;
-todo[i++] = new TODO('Medicine', 'Dont forget to take medicine', 4, a, 'personal')
-todo[i++] = new TODO('Pick up Kids', 'Dont forget to take medicine', 4, a, 'kids')
+todo[i] = new TODO('Medicine', 'Dont forget to take medicine', 4, a, 'personal', i++);
+todo[i] = new TODO('Pick up Kids', 'Dont forget to take medicine', 4, a, 'kids', i++);
 console.log(todo[0]);
 console.log(todo[1]);
 for (x of todo) {
@@ -51,16 +52,28 @@ function add() {
     let category = document.getElementById("category");
     deadline = new Date(deadline.value)
     deadline = deadline.toLocaleString();
-    todo[i] = new TODO(title.value, details.value, priority.value, deadline, category.value);
+
+    todo[i] = new TODO(title.value, details.value, priority.value, deadline, category.value, i);
     console.log(todo[i]);
     print(todo[i++]);
     document.getElementById("modal_form").reset();
     return false;
 }
 
+function remove(num) {
+    let consent = confirm(`Do you want to delete ${todo[num].title}?`);
+    if (consent) {
+        todo.splice(num, 1)
+        document.getElementById("print-area").innerHTML = '';
+        for (x of todo) {
+            print(x);
+        }
+        console.log(todo);
+    }
+}
+
 function print(item) {
-    console.log(item);
-    document.getElementById("print-area").innerHTML += `<div class="items container">
+    document.getElementById("print-area").innerHTML += `<div class="items container" id="item${item.number}" ondblclick="remove(${todo.indexOf(item)})">
     <div class="row" style="margin-bottom:15px">
         <div class="col-sm-12 col-md-9 col-lg-8 col-xxl-7 item-title" style="border-bottom: 1px solid rgb(196, 193, 193);">${item.title}</div>
         <div class="priority col-sm-12 col-md-3 col-lg-4 col-xxl-5"> ${item.deadline}</div>
