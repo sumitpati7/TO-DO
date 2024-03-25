@@ -4,7 +4,7 @@
     color: black;
 }
 
-.col-sm-4 ul {
+.col-sm-3 ul {
     margin: 0;
     padding: 0;
 }
@@ -35,7 +35,7 @@ nav ul li .social i {
 }
 
 .social {
-    text-align: right;
+    text-align: center;
 }
 
 .body {
@@ -215,6 +215,28 @@ button i {
 form .modal-footer #modal_submit,
 form .modal-footer #modal_close {
     width: 25%;
+}
+
+.clock {
+    margin: 10px 10px;
+    text-align: center;
+    color: white;
+    height: min-content;
+}
+
+.clock #date {
+    color: white;
+    height: 20%;
+    margin: 0;
+}
+
+.clock #time {
+    font-family: "Micro 5", sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+    color: white;
+    height: 80%;
+    margin: 0;
 }
 
 @media screen and (max-width:1030px) {

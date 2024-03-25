@@ -89,3 +89,32 @@ function print(item) {
     </div>
 </div>`
 }
+
+function addZero(num) {
+    let min = ''
+    if (num < 10) {
+        min = '0' + num;
+    } else {
+        min = num;
+    }
+    return min;
+}
+
+
+function getdate() {
+    let sec = '';
+    let d = new Date();
+    let min = d.getMinutes();
+    let hr = d.getHours() % 12;
+    sec = d.getSeconds();
+    let year = d.getFullYear();
+    let mon = d.getMonth();
+    let date = d.getDate();
+    let day = d.getDay();
+    let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    document.getElementById("date").innerHTML = `${week[day]}, ${date} of ${month[mon]}, ${year}`;
+    document.getElementById("time").innerHTML = hr + ":" + addZero(min) + ":" + addZero(sec);
+    setInterval(getdate, 1000);
+}
+getdate();
